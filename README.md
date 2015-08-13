@@ -122,7 +122,7 @@ git branch daniel
 
 If you type in **git branch** you see ther is a new on:
 ````
-14:25]git@gitexample~/Documents/GitHub/github-tutorial# git branch
+[14:25]git@gitexample~/Documents/GitHub/github-tutorial# git branch
   daniel
 * master
 ````
@@ -139,6 +139,11 @@ You can jump betwen your branches by type **git checkout <branch name>**
   master
 ````
 As you can see, now the branch called **daniel** is tagged with the ** * ** and is the active branch now.
+
+#### Rename a local branch
+````
+git branch -m <old name> <new name>
+````
 
 ### Commit changes to your local repository
 Please change your playground file now and leave me a notice if you like this tutorial or not - or so...
@@ -157,3 +162,49 @@ This command will add your changes to the command and you are able to type in a 
 ### Push changes to GitHub (Commit in SVN)
 With git all the commits your do are just localy on your maschine. To publish or backup them on GitHub, you need to push the changes.
 
+To push your local repository to the remote GitHub servers type **git push origin <branch name>**
+
+````
+[14:39]git@gitexample~/Documents/GitHub/github-tutorial# git push origin daniel
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/it-novum/github-tutorial.git
+ * [new branch]      daniel -> daniel
+[14:39]dziegler@daniels-mbp~/Documents
+````
+As you can see, your changes are now available on GitHub.
+
+#### Push changes to GitHub with a different branch name
+````
+git push origin <local name>:<remote name>
+````
+
+### Pull changes from GitHub to my local machine (SVN update)
+Usually you are only update your local **master** branch
+
+Change to the master branch (git checkout master) and type in **git pull**.
+
+### Merge remote master to your local branch
+In some cases you need to update your local branch to remote master because you need a feature, function or method someone else developed.
+
+First of all, push all your changes to GitHub to create a backup!
+````
+git rebase master
+````
+
+If you have any conflicts please solve them.
+You are resolving a conflict by editing the conflicted file and merge it with your hands :-)
+
+After you solved the conflicts you need to add the files
+````
+git add path/to/conflicted/file
+````
+and continue with the rebase
+````
+git rebase --continue
+````
+
+# Did I missed something?
+You are welcome to extend this README :-)
+
+# License
+MIT License
