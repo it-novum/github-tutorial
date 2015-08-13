@@ -9,7 +9,7 @@ Mac OS X
 On Mac OS you need to download [Xcode](https://itunes.apple.com/de/app/xcode/id497799835?mt=12) from the Mac App Store
 
 # Should I use a GUI or the command line?
-A nice and easy to use GUI is the [GitHub for Windows](https://desktop.github.com/) or [GitHub for Mac](https://desktop.github.com/) but i recommend to use the command line. It's very easy and fast!
+A nice and easy to use GUI is the [GitHub for Windows](https://desktop.github.com/) or [GitHub for Mac](https://desktop.github.com/) but I recommend to use the command line. It's very easy and fast!
 
 # The most important commands
 ### How to clone a repository (Called checkout in SVN world)
@@ -84,3 +84,64 @@ index c187135..b5b8618 100644
 I replace the line **foobar** with **This is code or text or..**
 
 ### Git checkout (Revert (SVN wording) a file or branch)
+Lets say you did some changes you don't like anymore. So you want to revert your file back to the original file again.
+
+In this case I want my **foobar** line in the playground file back and remove the **This is code or text or..** stuff.
+So we type
+````
+git checkout playground
+````
+
+````
+[14:22]git@gitexample~/Documents/GitHub/github-tutorial# git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+nothing to commit, working directory clean
+````
+
+As you can see in **git diff** my changes are gone and the **playground** file is not marked as changed anymore.
+
+### Git branch
+Git is able to create branches. This is basicly the same than create a folder "Final", "Final_1", "Realy_final_now" to save different version of development but its handled by git itself.
+
+By default git will create you a branch called **master**. **Usually you will never work in master branch!**
+
+You can check your current branch with the command **git branch**
+````
+[14:25]git@gitexample~/Documents/GitHub/github-tutorial# git branch
+* master
+````
+At the moment there is only the master branch. It is flagged with a ** * ** because it is the active branch at the momen.
+
+#### Create a new branch
+Please create new a new branch with the command **git branch <name>**
+````
+git branch daniel
+````
+
+If you type in **git branch** you see ther is a new on:
+````
+14:25]git@gitexample~/Documents/GitHub/github-tutorial# git branch
+  daniel
+* master
+````
+
+#### Change to the new branch (Checkout)
+You can jump betwen your branches by type **git checkout <branch name>**
+````
+[14:26]git@gitexample~/Documents/GitHub/github-tutorial#
+git checkout daniel
+````
+
+````
+[14:26]git@gitexample~/Documents/GitHub/github-tutorial#
+git branch
+* daniel
+  master
+````
+As you can see, now the branch called **daniel** is tagged with the ** * ** and is the active branch now.
+
+### Commit changes to your local repository
+Please change your playground file now and leave me a notice if you like this tutorial or not - or so...
+
