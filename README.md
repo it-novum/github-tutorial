@@ -130,13 +130,11 @@ If you type in **git branch** you see ther is a new on:
 #### Change to the new branch (Checkout)
 You can jump betwen your branches by type **git checkout <branch name>**
 ````
-[14:26]git@gitexample~/Documents/GitHub/github-tutorial#
-git checkout daniel
+[14:26]git@gitexample~/Documents/GitHub/github-tutorial# git checkout daniel
 ````
 
 ````
-[14:26]git@gitexample~/Documents/GitHub/github-tutorial#
-git branch
+[14:26]git@gitexample~/Documents/GitHub/github-tutorial# git branch
 * daniel
   master
 ````
@@ -144,4 +142,18 @@ As you can see, now the branch called **daniel** is tagged with the ** * ** and 
 
 ### Commit changes to your local repository
 Please change your playground file now and leave me a notice if you like this tutorial or not - or so...
+
+If you are done run the commands git status and git diff to check your changes...
+
+To commit your changes you can use the command **git commit -a -m "Some message"**
+
+This command will add your changes to the command and you are able to type in a commit message.
+````
+[14:27]git@gitexample~/Documents/GitHub/github-tutorial# git commit -a -m "Update playground"
+[daniel 5b842ce] Update playground
+ 1 file changed, 62 insertions(+), 1 deletion(-)
+````
+
+### Push changes to GitHub (Commit in SVN)
+With git all the commits your do are just localy on your maschine. To publish or backup them on GitHub, you need to push the changes.
 
