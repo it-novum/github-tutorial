@@ -31,6 +31,7 @@ So at the moment only the playground file is tracked by git.
 Now we want to add our new README.md to git as well. The git shell shows you the command to do this.
 
 ````
+[14:10]git@gitexample~/Documents/GitHub/github-tutorial# git status
 On branch master
 Your branch is ahead of 'origin/master' by 1 commit.
   (use "git push" to publish your local commits)
@@ -53,3 +54,33 @@ git add README.md
 ````
 
 ### Git diff
+As you already expected by the name, **git diff** is able to show you the modifications your did in a file.
+````
+[14:13]git@gitexample~/Documents/GitHub/github-tutorial# git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   playground
+````
+As you can see in the git status I modified the playground file. So lets see what I did there.
+````diff
+[14:13]git@gitexample~/Documents/GitHub/github-tutorial# git diff playground
+diff --git a/playground b/playground
+index c187135..b5b8618 100644
+--- a/playground
++++ b/playground
+@@ -1,4 +1,4 @@
+ This is a file you can play around with...
+ Have a lot of fun
+ 
+-foobar
+\ No newline at end of file
++This is code or text or..
+````
+I replace the line **foobar** with **This is code or text or..**
+
+### Git checkout (Revert (SVN wording) a file or branch)
