@@ -183,6 +183,15 @@ Usually you are only update your local **master** branch
 
 Change to the master branch (git checkout master) and type in **git pull**.
 
+### Merge your local branch to remote master branch on GitHub
+````
+git checkout master
+git pull
+git merge <branch name>
+git commit -a -m "$MESSAGE"
+git push
+````
+
 ### Merge remote master to your local branch
 In some cases you need to update your local branch to remote master because you need a feature, function or method someone else developed.
 
