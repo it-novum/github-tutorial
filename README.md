@@ -1,5 +1,5 @@
 This is a quick start guide for developers that are interested in learning git
-# Install git on your maschine
+# Install git on your machine
 Ubuntu and Debian:
 ````
 apt-get install git
@@ -39,12 +39,12 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   playground
+  modified:   playground
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-	README.md
+  README.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ````
@@ -64,7 +64,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   playground
+  modified:   playground
 ````
 As you can see in the git status I modified the playground file. So lets see what I did there.
 ````diff
@@ -210,6 +210,18 @@ git add path/to/conflicted/file
 and continue with the rebase
 ````
 git rebase --continue
+````
+
+### Delete Branch
+if you want to delete your remote and local branch (which you have created) you need to execute the following commands:
+
+Delete the remote branch
+````
+git push origin --delete $BRANCH
+````
+Delete your local branch
+````
+git branch -d $BRANCH
 ````
 
 # Did I missed something?
