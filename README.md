@@ -5,7 +5,8 @@ Ubuntu and Debian:
 apt-get install git
 ````
 
-Mac OS X
+Mac OS X:
+
 On Mac OS you need to download [Xcode](https://itunes.apple.com/de/app/xcode/id497799835?mt=12) from the Mac App Store
 
 # Should I use a GUI or the command line?
@@ -196,6 +197,14 @@ git push
 In some cases you need to update your local branch to remote master because you need a feature, function or method someone else developed.
 
 First of all, push all your changes to GitHub to create a backup!
+````
+git checkout master
+git pull
+git checkout <branch name>
+git push
+````
+
+Start merging current master to your local branch:
 ````
 git rebase master
 ````
