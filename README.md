@@ -232,6 +232,53 @@ Delete your local branch
 ````
 git branch -d $BRANCH
 ````
+Quick start for linking you commits with Jira issues
+
+
+###Using smart commits to link your git commits with Jira issues
+
+````
+<YOUR_ISSUE_KEY> #<COMMAND> 
+````
+
+The Issue Key is the Key which you can find in every created issue (i.e. "ITC-45“)
+The Command can be #time, #comment or a specific workflow like #resolve or your custom transition
+
+example:
+
+````
+ITC-45 #resolve #comment this is a comment
+````
+
+This line will resolve the Jira issue ITC-45 and create the comment „this is a comment“. The commit message in git could be look like this:
+
+````
+"[-]fixed my bug ITC-45 #resolve“
+````
+
+If everything worked you can see you commit in Github in your specified Jira issue.
+
+You also can perform a single command to multiple issues:
+
+````
+ITC-45 ITC-46 ITC-47 #resolve
+````
+
+and also multiple commands on multiple issues:
+
+````
+ITC-45 ITC-46 ITC-47 #resolve #comment this is a comment
+````
+
+
+Currently we didn’t find out how this will work with our custom Transitions so that we can move an issue from our Development Queue to the Dev-to-QA-Queue.
+In Theory it should be the #dev-to-qa-queue but this didn’t worked yet.
+However the commit will be linked to the issue even if the Transition move will not work
+
+For further infrmation you can check the official [smart commits document](https://confluence.atlassian.com/fisheye/using-smart-commits-298976812.html) from Atlassian
+
+
+You are welcome to extend this Readme
 
 # Did I missed something?
 You are welcome to extend this README :-)
