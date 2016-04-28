@@ -77,7 +77,7 @@ index c187135..b5b8618 100644
 @@ -1,4 +1,4 @@
  This is a file you can play around with...
  Have a lot of fun
- 
+
 -foobar
 \ No newline at end of file
 +This is code or text or..
@@ -221,6 +221,25 @@ and continue with the rebase
 git rebase --continue
 ````
 
+### Merge your Feature branch into Development branch
+To merge your feature branch into the development branch you need to checkout the development branch first:
+
+````
+git checkout development
+````
+
+After this you pull the latest changes from the remote development branch:
+````
+git pull origin development
+````
+
+After these two steps you can merge your branch into the development branch:
+````
+git merge $yourBranchName
+````
+
+Thats it :wink:
+
 ### Delete Branch
 if you want to delete your remote and local branch (which you have created) you need to execute the following commands:
 
@@ -238,7 +257,7 @@ Quick start for linking you commits with Jira issues
 ###Using smart commits to link your git commits with Jira issues
 
 ````
-<YOUR_ISSUE_KEY> #<COMMAND> 
+<YOUR_ISSUE_KEY> #<COMMAND>
 ````
 
 The Issue Key is the Key which you can find in every created issue (i.e. "ITC-45“)
@@ -272,7 +291,7 @@ ITC-45 ITC-46 ITC-47 #resolve #comment this is a comment
 
 ####Custom Transitions
 
-First of all your email which you are using to make git commits must be the same as your Jira Mail Address. Otherwise the automatic Queue move and also every other 
+First of all your email which you are using to make git commits must be the same as your Jira Mail Address. Otherwise the automatic Queue move and also every other
 command such as #comment or #time will NOT work.
 
 to see what email address is used in your git config type:
